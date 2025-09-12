@@ -4,6 +4,9 @@ from .models import Plan, Trainer, Member
 from .forms import MemberForm
 
 # List views
+def home(request):
+    return render(request, 'gymapp/home.html')
+
 
 def plan_list(request):
     plans = Plan.objects.all()

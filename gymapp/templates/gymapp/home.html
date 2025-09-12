@@ -1,0 +1,35 @@
+{% extends "gymapp/base.html" %}
+{% block title %}Home - Eurofit Gym{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>Welcome to <span class="highlight">Eurofit Fitness Gym</span></h1>
+    <p>Your transformation journey starts here!</p>
+    <a href="{% url 'member_register' %}" class="btn">Join Now</a>
+</div>
+
+<div class="cards mt-5">
+    <div class="card feature-card">
+        <i class="bi bi-heart-pulse" style="font-size: 2rem; color:#7b5fc0;"></i>
+        <h3>Personal Training</h3>
+        <p>Get guidance from certified trainers.</p>
+    </div>
+    <div class="card feature-card">
+        <i class="bi bi-calendar-check" style="font-size: 2rem; color:#7b5fc0;"></i>
+        <h3>Flexible Plans</h3>
+        <p>Choose a membership plan that suits you.</p>
+    </div>
+    <div class="card feature-card">
+        <i class="bi bi-people-fill" style="font-size: 2rem; color:#7b5fc0;"></i>
+        <h3>Community</h3>
+        <p>Join a fitness community that motivates you.</p>
+    </div>
+</div>
+
+<div class="cta mt-5">
+    <h2>Start your fitness journey today 💪</h2>
+    <a href="{% url 'plan_list' %}" class="btn btn-light mt-3">View Plans</a>
+</div>
+{% endblock %}
+
+

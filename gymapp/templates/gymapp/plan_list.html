@@ -1,0 +1,27 @@
+{% extends 'gymapp/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">📋 Membership Plans</h2>
+    <div class="row g-4">
+        {% for plan in plans %}
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 rounded-4 h-100 text-center">
+                <div class="card-body">
+                    <i class="bi bi-card-checklist text-success" style="font-size: 3rem;"></i>
+                    <h4 class="card-title mt-3">{{ plan.name }}</h4>
+                    <p class="text-muted">{{ plan.description }}</p>
+                    <h5 class="text-primary">₹{{ plan.price }}</h5>
+                    <a href="#" class="btn btn-outline-success mt-3">Join Now</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center">No plans available right now.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+
+
