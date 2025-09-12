@@ -1,0 +1,9 @@
+<h1>Member Registration</h1>
+
+<form method="post">
+    {% csrf_token %}      
+    {{ form.as_p }}            
+    <button type="submit">Register</button>
+</form>
+
+<a href="{% url 'member_list' %}">View Members</a>
