@@ -1,4 +1,5 @@
 # Form based on member model
+# Registration form for New member 
 from django import forms
 from .models import Member
 
