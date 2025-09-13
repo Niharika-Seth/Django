@@ -1,59 +1,42 @@
 {% extends 'gymapp/base.html' %}
 
 {% block content %}
-<div class="container my-5">
+<div class="container mt-5">
+    <h2 class="text-center mb-4 fw-bold text-primary">💪 Our Membership Plans</h2>
+    <p class="text-center text-muted mb-5">
+        Choose the plan that fits your fitness journey. Flexible, affordable, and designed for you!
+    </p>
 
-    <!-- Hero Section -->
-    <div class="text-center mb-5">
-        <h2 class="fw-bold">💪 Choose Your Perfect Membership Plan</h2>
-        <p class="text-muted">Select the plan that fits your fitness journey. Upgrade anytime!</p>
-    </div>
-
-    <!-- Plans Section -->
-    <div class="row g-4 justify-content-center">
-
+    <div class="row g-4">
         {% for plan in plans %}
         <div class="col-md-4">
-            <div class="card shadow-lg border-0 rounded-4 h-100 text-center pricing-card">
-                <div class="card-body p-4">
-
-                    <!-- Plan Icon -->
+            <div class="card shadow-lg border-0 rounded-4 h-100 text-center hover-card">
+                <div class="card-body d-flex flex-column justify-content-center">
                     <i class="bi bi-star-fill text-warning" style="font-size: 3rem;"></i>
-
-                    <!-- Plan Title -->
                     <h4 class="card-title mt-3 fw-bold">{{ plan.name }}</h4>
-
-                    <!-- Plan Description -->
-                    <p class="text-muted small">{{ plan.description }}</p>
-
-                    <!-- Plan Price -->
-                    <h2 class="text-primary fw-bold">₹{{ plan.price }}</h2>
-                    <p class="text-muted">per month</p>
-
-                    <!-- Button -->
-                    <a href="#" class="btn btn-success px-4 rounded-pill">
-                        <i class="bi bi-cart-check"></i> Join Now
-                    </a>
+                    <p class="text-muted">{{ plan.description }}</p>
+                    <h5 class="text-success fw-bold mb-4">₹{{ plan.price }}</h5>
+                    <a href="#" class="btn btn-outline-primary rounded-pill px-4 py-2 mt-auto">Join Now</a>
                 </div>
             </div>
         </div>
         {% empty %}
-        <p class="text-center">No plans available right now.</p>
+        <p class="text-center text-danger">🚨 No plans available right now.</p>
         {% endfor %}
     </div>
 </div>
 
-<!-- Custom Styles -->
 <style>
-    .pricing-card {
-        transition: all 0.3s ease-in-out;
+    .hover-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .pricing-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    .hover-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
     }
 </style>
 {% endblock %}
+
 
 
 
