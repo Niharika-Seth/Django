@@ -1,18 +1,39 @@
 {% extends 'gymapp/base.html' %}
 
 {% block content %}
-<div class="container mt-5">
-    <h2 class="text-center mb-4">📋 Membership Plans</h2>
-    <div class="row g-4">
+<div class="container my-5">
+
+    <!-- Hero Section -->
+    <div class="text-center mb-5">
+        <h2 class="fw-bold">💪 Choose Your Perfect Membership Plan</h2>
+        <p class="text-muted">Select the plan that fits your fitness journey. Upgrade anytime!</p>
+    </div>
+
+    <!-- Plans Section -->
+    <div class="row g-4 justify-content-center">
+
         {% for plan in plans %}
         <div class="col-md-4">
-            <div class="card shadow-lg border-0 rounded-4 h-100 text-center">
-                <div class="card-body">
-                    <i class="bi bi-card-checklist text-success" style="font-size: 3rem;"></i>
-                    <h4 class="card-title mt-3">{{ plan.name }}</h4>
-                    <p class="text-muted">{{ plan.description }}</p>
-                    <h5 class="text-primary">₹{{ plan.price }}</h5>
-                    <a href="#" class="btn btn-outline-success mt-3">Join Now</a>
+            <div class="card shadow-lg border-0 rounded-4 h-100 text-center pricing-card">
+                <div class="card-body p-4">
+
+                    <!-- Plan Icon -->
+                    <i class="bi bi-star-fill text-warning" style="font-size: 3rem;"></i>
+
+                    <!-- Plan Title -->
+                    <h4 class="card-title mt-3 fw-bold">{{ plan.name }}</h4>
+
+                    <!-- Plan Description -->
+                    <p class="text-muted small">{{ plan.description }}</p>
+
+                    <!-- Plan Price -->
+                    <h2 class="text-primary fw-bold">₹{{ plan.price }}</h2>
+                    <p class="text-muted">per month</p>
+
+                    <!-- Button -->
+                    <a href="#" class="btn btn-success px-4 rounded-pill">
+                        <i class="bi bi-cart-check"></i> Join Now
+                    </a>
                 </div>
             </div>
         </div>
@@ -21,7 +42,19 @@
         {% endfor %}
     </div>
 </div>
+
+<!-- Custom Styles -->
+<style>
+    .pricing-card {
+        transition: all 0.3s ease-in-out;
+    }
+    .pricing-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+</style>
 {% endblock %}
+
 
 
 
