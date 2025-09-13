@@ -1,26 +1,28 @@
-{% extends 'gymapp/base.html' %}
-
+{% extends "gymapp/base.html" %}
 {% block content %}
-<div class="container mt-5">
-    <h2 class="text-center mb-4">👥 Our Members</h2>
-    <div class="row g-4">
-        {% for member in members %}
-        <div class="col-md-4">
-            <div class="card shadow-lg border-0 rounded-4 h-100 text-center">
-                <div class="card-body">
-                    <i class="bi bi-people-fill text-warning" style="font-size: 3rem;"></i>
-                    <h4 class="card-title mt-3">{{ member.name }}</h4>
-                    <p class="text-muted mb-1"><strong>Email:</strong> {{ member.email }}</p>
-                    <p class="mb-1"><strong>Joined On:</strong> {{ member.joined_date }}</p>
-                    <a href="#" class="btn btn-outline-warning mt-3">View Profile</a>
-                </div>
-            </div>
-        </div>
-        {% empty %}
-        <p class="text-center">No members registered yet.</p>
-        {% endfor %}
-    </div>
-</div>
+<h2>All Members</h2>
+<table border="1" cellpadding="10">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Join Date</th>
+  </tr>
+  {% for member in members %}
+  <tr>
+    <td>{{ member.name }}</td>
+    <td>{{ member.email }}</td>
+    <td>{{ member.join_date }}</td>
+  </tr>
+  {% empty %}
+  <tr>
+    <td colspan="4">No members registered yet.</td>
+  </tr>
+  {% endfor %}
+</table>
+<a href="{% url 'member_register' %}">
+  <button>Add New Member</button>
+</a>
 {% endblock %}
+
 
 

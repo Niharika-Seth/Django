@@ -1,12 +1,15 @@
-{% extends 'gymapp/base.html' %}
-
+{% extends "gymapp/base.html" %}
 {% block content %}
 <h2>Register New Member</h2>
-<form method="post" class="form-container">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Register</button>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Register</button>
 </form>
+<a href="{% url 'member_list' %}">
+  <button>View Members</button>
+</a>
 {% endblock %}
+
 
 
