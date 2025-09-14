@@ -3,39 +3,90 @@
 {% block content %}
 <div class="container mt-5">
     <h2 class="text-center mb-4 fw-bold text-primary">💪 Our Membership Plans</h2>
-    <p class="text-center text-muted mb-5">
-        Choose the plan that fits your fitness journey. Flexible, affordable, and designed for you!
-    </p>
-
     <div class="row g-4">
-        {% for plan in plans %}
+
+        <!-- Basic Plan -->
         <div class="col-md-4">
-            <div class="card shadow-lg border-0 rounded-4 h-100 text-center hover-card">
-                <div class="card-body d-flex flex-column justify-content-center">
-                    <i class="bi bi-star-fill text-warning" style="font-size: 3rem;"></i>
-                    <h4 class="card-title mt-3 fw-bold">{{ plan.name }}</h4>
-                    <p class="text-muted">{{ plan.description }}</p>
-                    <h5 class="text-success fw-bold mb-4">₹{{ plan.price }}</h5>
-                    <a href="#" class="btn btn-outline-primary rounded-pill px-4 py-2 mt-auto">Join Now</a>
+            <div class="card shadow-lg border-0 rounded-4 h-100 text-center">
+                <div class="card-body">
+                    <i class="bi bi-heart-pulse text-danger" style="font-size: 3rem;"></i>
+                    <h4 class="card-title mt-3">Basic</h4>
+                    <p class="text-muted">Gym access, 1 free diet consultation</p>
+                    <h5 class="text-success">₹999 / 30 days</h5>
+                    <a href="{% url 'member_register' %}" class="btn btn-outline-primary mt-3">Join Now</a>
                 </div>
             </div>
         </div>
-        {% empty %}
-        <p class="text-center text-danger">🚨 No plans available right now.</p>
-        {% endfor %}
+
+        <!-- Standard Plan -->
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 rounded-4 h-100 text-center">
+                <div class="card-body">
+                    <i class="bi bi-bar-chart-line text-warning" style="font-size: 3rem;"></i>
+                    <h4 class="card-title mt-3">Standard</h4>
+                    <p class="text-muted">Gym + Cardio, Monthly progress check</p>
+                    <h5 class="text-success">₹1799 / 60 days</h5>
+                    <a href="{% url 'member_register' %}" class="btn btn-outline-primary mt-3">Join Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Premium Plan -->
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 rounded-4 h-100 text-center">
+                <div class="card-body">
+                    <i class="bi bi-award text-info" style="font-size: 3rem;"></i>
+                    <h4 class="card-title mt-3">Premium</h4>
+                    <p class="text-muted">Gym + Cardio + Yoga, Weekly trainer guidance</p>
+                    <h5 class="text-success">₹2499 / 90 days</h5>
+                    <a href="{% url 'member_register' %}" class="btn btn-outline-primary mt-3">Join Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gold Plan -->
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 rounded-4 h-100 text-center">
+                <div class="card-body">
+                    <i class="bi bi-star-fill text-warning" style="font-size: 3rem;"></i>
+                    <h4 class="card-title mt-3">Gold</h4>
+                    <p class="text-muted">All facilities, Personal trainer, Custom diet plan</p>
+                    <h5 class="text-success">₹4999 / 180 days</h5>
+                    <a href="{% url 'member_register' %}" class="btn btn-outline-primary mt-3">Join Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Platinum Plan -->
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 rounded-4 h-100 text-center">
+                <div class="card-body">
+                    <i class="bi bi-gem text-primary" style="font-size: 3rem;"></i>
+                    <h4 class="card-title mt-3">Platinum</h4>
+                    <p class="text-muted">Unlimited access, Nutritionist support, Free supplements kit</p>
+                    <h5 class="text-success">₹8999 / 365 days</h5>
+                    <a href="{% url 'member_register' %}" class="btn btn-outline-primary mt-3">Join Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Student Special -->
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 rounded-4 h-100 text-center">
+                <div class="card-body">
+                    <i class="bi bi-book text-success" style="font-size: 3rem;"></i>
+                    <h4 class="card-title mt-3">Student Special</h4>
+                    <p class="text-muted">Discounted plan for students, Gym + Cardio access</p>
+                    <h5 class="text-success">₹699 / 30 days</h5>
+                    <a href="{% url 'member_register' %}" class="btn btn-outline-primary mt-3">Join Now</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
-
-<style>
-    .hover-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .hover-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
-    }
-</style>
 {% endblock %}
+
 
 
 
