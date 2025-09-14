@@ -2,26 +2,85 @@
 
 {% block content %}
 <div class="container mt-5">
-    <h2 class="text-center mb-4">💪 Meet Our Trainers</h2>
+    <h2 class="text-center mb-4 fw-bold text-primary">Meet Our Trainers</h2>
     <div class="row g-4">
-        {% for trainer in trainers %}
+
+        <!-- Trainer 1 -->
         <div class="col-md-4">
             <div class="card shadow-lg border-0 rounded-4 h-100 text-center">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top rounded-top-4" alt="Trainer 1">
                 <div class="card-body">
-                    <i class="bi bi-person-badge-fill text-primary" style="font-size: 3rem;"></i>
-                    <h4 class="card-title mt-3">{{ trainer.name }}</h4>
-                    <p class="text-muted mb-1"><strong>Specialization:</strong> {{ trainer.specialization }}</p>
-                    <p class="mb-1"><strong>Experience:</strong> {{ trainer.experience_years }} years</p>
-                    <a href="#" class="btn btn-outline-primary mt-3">Book Session</a>
+                    <h4 class="card-title mt-2">Rahul Sharma</h4>
+                    <p class="text-muted">Certified Personal Trainer</p>
+                    <p>💪 5+ years experience in strength training and bodybuilding.</p>
                 </div>
             </div>
         </div>
-        {% empty %}
-        <p class="text-center">No trainers available at the moment.</p>
-        {% endfor %}
+
+        <!-- Trainer 2 -->
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 rounded-4 h-100 text-center">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top rounded-top-4" alt="Trainer 2">
+                <div class="card-body">
+                    <h4 class="card-title mt-2">Priya Mehta</h4>
+                    <p class="text-muted">Yoga and Flexibility Coach</p>
+                    <p>🧘 7+ years in yoga, meditation, and body flexibility programs.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trainer 3 -->
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 rounded-4 h-100 text-center">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top rounded-top-4" alt="Trainer 3">
+                <div class="card-body">
+                    <h4 class="card-title mt-2">Amit Verma</h4>
+                    <p class="text-muted">Cardio and Weight Loss Specialist</p>
+                    <p>🏃 Helped 200+ clients in fat loss and cardio endurance training.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trainer 4 -->
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 rounded-4 h-100 text-center">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top rounded-top-4" alt="Trainer 4">
+                <div class="card-body">
+                    <h4 class="card-title mt-2">Sneha Kapoor</h4>
+                    <p class="text-muted">Zumba and Dance Fitness Coach</p>
+                    <p>💃 6+ years experience in Zumba, aerobics, and dance fitness.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trainer 5 -->
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 rounded-4 h-100 text-center">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top rounded-top-4" alt="Trainer 5">
+                <div class="card-body">
+                    <h4 class="card-title mt-2">Vikram Singh</h4>
+                    <p class="text-muted">CrossFit and HIIT Expert</p>
+                    <p>🔥 4+ years in high-intensity training and CrossFit coaching.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trainer 6 -->
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 rounded-4 h-100 text-center">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top rounded-top-4" alt="Trainer 6">
+                <div class="card-body">
+                    <h4 class="card-title mt-2">Anjali Nair</h4>
+                    <p class="text-muted">Nutrition and Lifestyle Coach</p>
+                    <p>🥗 Certified dietitian helping clients with custom nutrition plans.</p>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 {% endblock %}
+
 
 
 
