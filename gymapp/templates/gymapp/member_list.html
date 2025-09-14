@@ -1,28 +1,94 @@
 {% extends "gymapp/base.html" %}
 {% block content %}
-<h2>All Members</h2>
-<table border="1" cellpadding="10">
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Join Date</th>
-  </tr>
-  {% for member in members %}
-  <tr>
-    <td>{{ member.name }}</td>
-    <td>{{ member.email }}</td>
-    <td>{{ member.join_date }}</td>
-  </tr>
-  {% empty %}
-  <tr>
-    <td colspan="4">No members registered yet.</td>
-  </tr>
-  {% endfor %}
-</table>
-<a href="{% url 'member_register' %}">
-  <button>Add New Member</button>
-</a>
+<style>
+  .member-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #4a4a8a;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  th {
+    background-color: #6c63ff;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  tr:hover {
+    background-color: #f1f1ff;
+  }
+
+  .btn-add {
+    padding: 10px 18px;
+    background: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+  }
+
+  .btn-add:hover {
+    background: #4a47c4;
+  }
+</style>
+
+<div class="member-container">
+  <h2>All Members</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Join Date</th>
+    </tr>
+    {% for member in members %}
+    <tr>
+      <td>{{ member.name }}</td>
+      <td>{{ member.email }}</td>
+      <td>{{ member.join_date }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td colspan="3">No members registered yet.</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <a href="{% url 'member_register' %}" class="btn-add">+ Add New Member</a>
+</div>
 {% endblock %}
+
 
 
 
