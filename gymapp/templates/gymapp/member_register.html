@@ -6,15 +6,15 @@
         <div class="col-md-6">
             <div class="card shadow-lg border-0 rounded-4">
                 <div class="card-header bg-primary text-white text-center rounded-top-4">
-                    <h3 class="mb-0">📝 Register New Member</h3>
+                    <h3 class="mb-0"> Register New Member</h3>
                 </div>
                 <div class="card-body">
                     <form method="post" class="needs-validation" novalidate>
                         {% csrf_token %}
                         {{ form.as_p }}
                         <div class="d-grid gap-2 mt-3">
-                            <button type="submit" class="btn btn-success">✅ Register</button>
-                            <a href="{% url 'member_list' %}" class="btn btn-outline-primary">👥 View Members</a>
+                            <button type="submit" class="btn btn-success"> Register</button>
+                            <a href="{% url 'member_list' %}" class="btn btn-outline-primary"> View Members</a>
                         </div>
                     </form>
                 </div>
