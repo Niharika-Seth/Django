@@ -31,8 +31,7 @@ def plan_list(request):
 def trainer_list(request):
     return render(request, "gymapp/trainer_list.html")
 
-# For Update and Delete Operations
-
+# For Update Operation
 def member_update(request, pk):
     member = get_object_or_404(Member, pk=pk)
     if request.method == "POST":
@@ -43,6 +42,15 @@ def member_update(request, pk):
     else:
         form = MemberForm(instance=member)
     return render(request, 'gymapp/member_update.html', {'form': form})
+
+# For Delete Operation
+def member_delete(request, pk):
+    member = get_object_or_404(Member, pk=pk)
+    if request.method == "POST":
+        member.delete()
+        return redirect('member_list')
+    return render(request, 'gymapp/member_delete.html', {'member': member})
+
 
 
 
