@@ -1,0 +1,29 @@
+{% extends "gymapp/base.html" %}
+{% block content %}
+<div style="display:flex; justify-content:center; margin-top:50px;">
+  <form method="post" style="width:400px; padding:20px; background:#f9f9f9; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+    {% csrf_token %}
+    <h2 style="text-align:center; margin-bottom:20px;">Login</h2>
+
+    <label>Username</label>
+    <input type="text" name="username" class="form-control" required style="width:100%; padding:10px; margin-bottom:15px;">
+
+    <label>Password</label>
+    <input type="password" name="password" class="form-control" required style="width:100%; padding:10px; margin-bottom:15px;">
+
+    <div style="text-align:center;">
+      <button type="submit" style="padding:10px 20px; background:#4CAF50; color:white; border:none; border-radius:5px; cursor:pointer;">
+        Login
+      </button>
+    </div>
+
+    {% if messages %}
+      <ul style="color:red; text-align:center; margin-top:10px;">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </form>
+</div>
+{% endblock %}
