@@ -1,7 +1,7 @@
 # create views
-from django.shortcuts import render, redirect
-from .forms import MemberForm
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Member
+from .forms import MemberForm
 
 # Homepage
 def home(request):
@@ -30,6 +30,20 @@ def plan_list(request):
 # Trainer List
 def trainer_list(request):
     return render(request, "gymapp/trainer_list.html")
+
+# For Update and Delete Operations
+
+def member_update(request, pk):
+    member = get_object_or_404(Member, pk=pk)
+    if request.method == "POST":
+        form = MemberForm(request.POST, instance=member)
+        if form.is_valid():
+            form.save()
+            return redirect('member_list')
+    else:
+        form = MemberForm(instance=member)
+    return render(request, 'gymapp/member_update.html', {'form': form})
+
 
 
 
