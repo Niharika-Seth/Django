@@ -1,7 +1,16 @@
 # create views
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Member
+from .models import Plan, Trainer
 from .forms import MemberForm
+
+def plan_list(request):
+    plans = Plan.objects.all()
+    return render(request, "gymapp/plan_list.html", {"plans": plans})
+
+def trainer_list(request):
+    trainers = Trainer.objects.all()
+    return render(request, "gymapp/trainer_list.html", {"trainers": trainers})
 
 # Homepage
 def home(request):
@@ -22,14 +31,6 @@ def member_register(request):
 def member_list(request):
     members = Member.objects.all()
     return render(request, "gymapp/member_list.html", {"members": members})
-
-# Plan List
-def plan_list(request):
-    return render(request, "gymapp/plan_list.html")
-
-# Trainer List
-def trainer_list(request):
-    return render(request, "gymapp/trainer_list.html")
 
 # For Update Operation
 def member_update(request, pk):
